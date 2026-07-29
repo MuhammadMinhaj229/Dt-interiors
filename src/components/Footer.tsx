@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowUp, Instagram, MessageSquare, Phone, MapPin, Mail, ShieldAlert } from "lucide-react";
+import { LUXURY_SERVICES } from "../data";
 
 export default function Footer() {
   const scrolltoTop = () => {
@@ -11,7 +12,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Upper Column Director */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16 pb-16 border-b border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16 pb-16 border-b border-white/5">
           
           {/* Col 1: Corporate Branding */}
           <div className="lg:col-span-2 flex flex-col gap-6 text-left">
@@ -51,16 +52,17 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Services Directory */}
-          <div>
-            <h4 className="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#D4AF37] mb-6 font-semibold">Services</h4>
-            <ul className="flex flex-col gap-3.5 text-sm text-white/75 font-light">
-              <li><a href="#services" className="hover:text-white transition-colors">Luxury Home Interiors</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Premium Modular Kitchens</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Bespoke Walk-in Closets</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Entertainment TV Backdrops</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">False Ceilings & Lighting</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Commercial & Office Styling</a></li>
+          {/* Col 2: Services Directory (spans 2 columns to comfortably hold the 2-column grid of all 14 services) */}
+          <div className="lg:col-span-2">
+            <h4 className="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#D4AF37] mb-6 font-semibold">Our Services</h4>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 text-sm text-white/75 font-light">
+              {LUXURY_SERVICES.map((service) => (
+                <li key={service.id}>
+                  <a href="#services" className="hover:text-white transition-colors block py-0.5">
+                    {service.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

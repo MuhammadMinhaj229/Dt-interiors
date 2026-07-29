@@ -1,0 +1,28 @@
+# Robots.txt for DT Interiors - Luxury Interior Designers in Warangal & Telangana
+# Optimized for traditional search engines, AI search crawlers, and browsers
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /dist/
+
+# Permit AI crawlers to fully access, parse, and cite our expert design contents and portfolios
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://dtinteriors.in/sitemap.xml
