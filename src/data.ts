@@ -7,6 +7,7 @@ export interface Project {
   location: string;
   beforeImg: string;
   afterImg: string;
+  fallbackImg?: string;
   description: string;
   beforeDesc: string;
   afterDesc: string;
@@ -114,6 +115,70 @@ export const SIGNATURE_PROJECTS: Project[] = [
     timeline: "10 Weeks",
     costRange: "₹20,00,000 - ₹28,00,000",
     clientName: "V-Connect Solutions Private Limited"
+  },
+  {
+    id: "bespoke-wardrobe",
+    title: "Dual-Tone Sliding Closet with Backlit Mirror",
+    category: "Bespoke Wardrobes",
+    location: "Kishanpura, Hanamkonda",
+    beforeImg: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800&auto=format&fit=crop",
+    afterImg: "/projects/bespoke-wardrobe.jpg",
+    fallbackImg: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
+    description: "A dual-tone high-gloss white and charcoal sliding-door wardrobe featuring modern overhead loft storage. Includes a built-in full-height dressing mirror integrated with perimeter-backlit LED lighting and sleek open floating displays.",
+    beforeDesc: "Cluttered bedroom wall space with outdated standard hinged doors and poor spatial planning.",
+    afterDesc: "A clean, spacious luxury wardrobe configuration that maximizes vertical height and adds cinematic room depth with LED lighting elements.",
+    materials: ["High-Gloss Acrylic Laminates", "Soft-Close Sliding Door Channels", "Perimeter-backlit LED Mirror", "Termite-Free Marine Plywood"],
+    timeline: "3 Weeks",
+    costRange: "₹4,50,000 - ₹6,50,000",
+    clientName: "Dr. Srinivas Rao, Senior Professor"
+  },
+  {
+    id: "teak-glass-closet",
+    title: "Teak Wood Glass Closet & Window Reading Bay",
+    category: "Bespoke Wardrobes",
+    location: "Kishanpura, Hanamkonda",
+    beforeImg: "https://images.unsplash.com/photo-1558882224-cca166733360?q=80&w=800&auto=format&fit=crop",
+    afterImg: "/projects/teak-glass-closet.jpg",
+    fallbackImg: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1200&auto=format&fit=crop",
+    description: "Bespoke wooden glass-door wardrobes equipped with inner warm LED lighting, rich natural teak framing, floating display shelves, and a cozy custom window reading bench with integrated under-seat storage.",
+    beforeDesc: "Empty bedroom corner with a plain window and no storage, leading to clutter and unused space.",
+    afterDesc: "A highly-functional bedroom system incorporating visual wardrobe storage, extensive warm backlighting, and a comfortable, dedicated lounging spot.",
+    materials: ["Clear Glass Doors with Gold Bezels", "Warm LED Strip Illuminators", "Burmese Teak Panels", "Soft Teal Fabric Cushioning"],
+    timeline: "4 Weeks",
+    costRange: "₹5,20,000 - ₹7,00,000",
+    clientName: "Smt. Kamala Devi, Renowned Educationist"
+  },
+  {
+    id: "sacred-lotus-pooja-partition",
+    title: "Sacred Lotus Pooja Partition Screen",
+    category: "Luxury Villa",
+    location: "Hunter Road, Warangal",
+    beforeImg: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
+    afterImg: "/projects/sacred-lotus-pooja-partition.jpg",
+    fallbackImg: "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?q=80&w=1200&auto=format&fit=crop",
+    description: "An elegant custom-engineered living room partition screen combining white geometric CNC-cut jaali panels, rich teak pillars, and backlit doors featuring gold metal Lotus carvings representing the sacred pooja sanctuary.",
+    beforeDesc: "A plain foyer leading directly into the main living room with zero visual division or privacy.",
+    afterDesc: "A breathtaking architectural focal point that provides privacy, structures the foyer entry, and integrates sacred traditional motifs into a modern layout.",
+    materials: ["Precision White CNC Jaali Panels", "Gold-Plated Lotus Mandala Carvings", "Solid Burmese Teakwood", "Backlit Warm Acrylic Sheets"],
+    timeline: "5 Weeks",
+    costRange: "₹6,80,000 - ₹9,50,000",
+    clientName: "Sri G. Venkat Rao, High Court Advocate"
+  },
+  {
+    id: "geometric-organic-ceiling",
+    title: "Geometric LED & Organic CNC False Ceiling",
+    category: "Luxury Apartment",
+    location: "Naimnagar, Hanamkonda",
+    beforeImg: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=800&auto=format&fit=crop",
+    afterImg: "/projects/geometric-organic-ceiling.jpg",
+    fallbackImg: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop",
+    description: "A custom layered luxury false ceiling featuring geometric white LED profile diffusers, deep indirect warm coves, and a prominent central dark wood panel with laser-cut leafy organic CNC patterns.",
+    beforeDesc: "A simple concrete slab with exposed conduit pipes and basic, harsh fluorescent tubes.",
+    afterDesc: "A layered architectural masterpiece that combines soft, non-glare atmospheric backlighting with custom organic wood details for grand volume.",
+    materials: ["Gyproc Moisture-Resistant Boards", "Sleek Aluminum Profile Channels", "Cove Warm White LEDs (3000K)", "Premium Dark CNC Wood Panels"],
+    timeline: "3 Weeks",
+    costRange: "₹3,50,000 - ₹5,00,000",
+    clientName: "Dr. Arundhati J., Lead Neurosurgeon"
   }
 ];
 
@@ -354,13 +419,31 @@ export const TESTIMONIALS: Testimonial[] = [
     source: "Google Reviews"
   },
   {
-    name: "Sri Anand G.",
-    role: "Senior Tech Architect",
-    project: "The Centenary Residence 3-BHK",
-    text: "Being a software architect, I appreciate millimetric precision. DT Interiors engineered our modular kitchen with silent Aventos lifters and beautiful under-counter sensor LEDs. It feels like stepping into a high-end European penthouse.",
+    name: "Ahmed OR",
+    role: "Homeowner",
+    project: "Premium Modern Wardrobe Setup",
+    text: "Nice 👍 work and extremely good response from the team at DT Interiors. They are highly professional, polite, and deliver exceptional finishing.",
+    rating: 5,
+    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop",
+    source: "Google Reviews"
+  },
+  {
+    name: "Mohd Sadiq Pasha",
+    role: "Villa Client",
+    project: "Luxury Turnkey Interior Design",
+    text: "Good quality company for interior work in Telangana. Their factory-cut wooden boards and premium accessories are highly durable and beautiful.",
     rating: 5,
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop",
-    source: "Verified Client"
+    source: "Google Reviews"
+  },
+  {
+    name: "Odipil Rayees Ahmed",
+    role: "Residence Owner",
+    project: "Bespoke Modular Kitchen",
+    text: "Good quality work and without doubt the best interior designer in Warangal. Highly creative and responsive layout options.",
+    rating: 5,
+    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop",
+    source: "Google Reviews"
   },
   {
     name: "Smt. Shailaja Reddy",

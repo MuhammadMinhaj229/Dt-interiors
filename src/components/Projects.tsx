@@ -1,13 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, Calendar, DollarSign, PenTool, LayoutGrid, Eye, ArrowRight } from "lucide-react";
 import { SIGNATURE_PROJECTS, Project } from "../data";
+
+function ProjectImage({ 
+  src, 
+  fallbackSrc, 
+  alt, 
+  className 
+}: { 
+  src: string; 
+  fallbackSrc?: string; 
+  alt: string; 
+  className?: string; 
+}) {
+  const [currentSrc, setCurrentSrc] = useState(src);
+
+  useEffect(() => {
+    setCurrentSrc(src);
+  }, [src]);
+
+  return (
+    <img
+      src={currentSrc}
+      alt={alt}
+      loading="lazy"
+      referrerPolicy="no-referrer"
+      className={className}
+      onError={() => {
+        if (fallbackSrc && currentSrc !== fallbackSrc) {
+          setCurrentSrc(fallbackSrc);
+        }
+      }}
+    />
+  );
+}
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [filter, setFilter] = useState<string>("All");
 
-  const categories = ["All", "Luxury Villa", "Premium Kitchen", "Luxury Apartment", "Office Space"];
+  const categories = ["All", "Luxury Villa", "Premium Kitchen", "Bespoke Wardrobes", "Luxury Apartment", "Office Space"];
 
   const filteredProjects = filter === "All"
     ? SIGNATURE_PROJECTS
@@ -70,10 +103,10 @@ export default function Projects() {
             >
               {/* After image as primary view */}
               <div className="absolute inset-0 z-0">
-                <img
+                <ProjectImage
                   src={project.afterImg}
+                  fallbackSrc={project.fallbackImg}
                   alt={project.title}
-                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#090909]/90 via-[#090909]/40 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
@@ -148,8 +181,9 @@ export default function Projects() {
 
                 {/* Splendid Hero Visual inside Modal */}
                 <div className="relative aspect-[16/9] mb-12 overflow-hidden border border-white/5">
-                  <img
+                  <ProjectImage
                     src={activeProject.afterImg}
+                    fallbackSrc={activeProject.fallbackImg}
                     alt={`${activeProject.title} completed`}
                     className="w-full h-full object-cover"
                   />

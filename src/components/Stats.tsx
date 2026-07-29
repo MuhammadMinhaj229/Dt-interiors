@@ -56,11 +56,11 @@ function RollingNumber({ value, suffix, label, sublabel }: StatItemProps) {
 }
 
 export default function Stats() {
-  const statsData: StatItemProps[] = [
+  const statsData = [
     { value: 120, suffix: "+", label: "Completed Projects", sublabel: "Beautiful apartments, comfortable homes, and smart kitchens." },
     { value: 5, suffix: "+", label: "Years of Craft", sublabel: "Designing and building beautiful spaces across Telangana." },
-    { value: 100, suffix: "%", label: "Premium Materials", sublabel: "Using water-proof wood, long-lasting hinges, and top-quality finishes." },
-    { value: 100, suffix: "%", label: "Client Satisfaction", sublabel: "On-time delivery and reliable, long-term guarantees." }
+    { value: 5, suffix: ".0 ★ Rating", label: "Google Reviews", sublabel: "Perfect 5-Star reputation with 100% happy client reviews." },
+    { value: 100, suffix: "%", label: "Happy Homeowners", sublabel: "On-time delivery and reliable, long-term guarantees." }
   ];
 
   return (
