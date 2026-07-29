@@ -1,0 +1,6 @@
+{
+  "name": "DT Interiors",
+  "description": "World-class luxury interior design landing page for DT Interiors.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
